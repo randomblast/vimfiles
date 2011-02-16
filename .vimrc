@@ -8,6 +8,6 @@ set autoindent
 "set showcmd
 set number
 set modeline
-filetype plugin on
+filetype plugin indent on
 
 map <silent> § :WMToggle<CR><C-W>h
