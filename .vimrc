@@ -8,6 +8,7 @@ set autoindent
 set number
 set modeline
 set cursorline
+set cursorcolumn
 
 if has("gui_running")
   set guioptions=egmc
