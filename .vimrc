@@ -7,6 +7,7 @@ set expandtab
 set autoindent
 set number
 set modeline
+set cursorline
 
 if has("gui_running")
   set guioptions=egmc
