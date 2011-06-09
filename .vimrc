@@ -8,9 +8,11 @@ set autoindent
 set number
 set modeline
 
-set guioptions=egmc
-set fuoptions=maxvert,maxhorz
-set vb
+if has("gui_running")
+  set guioptions=egmc
+  set fuoptions=maxvert,maxhorz
+  set vb
+endif
 
 filetype plugin indent on
 
