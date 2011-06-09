@@ -21,7 +21,7 @@ if version > 580
 endif
 let g:colors_name="desert"
 
-hi Normal	guifg=White guibg=grey20
+hi Normal	guifg=White guibg=grey15
 
 " highlight groups
 hi Cursor	guibg=indianred guifg=khaki
@@ -33,10 +33,10 @@ hi Cursor	guibg=indianred guifg=khaki
 "hi DiffText
 "hi ErrorMsg
 hi VertSplit	guibg=#c2bfa5 guifg=grey50 gui=none
-hi Folded	guibg=grey30 guifg=gold
+hi Folded	guibg=grey20 guifg=SkyBlue
 hi FoldColumn	guibg=grey30 guifg=tan
 hi IncSearch	guifg=slategrey guibg=khaki
-"hi LineNr
+hi LineNr   guifg=grey50
 hi ModeMsg	guifg=goldenrod
 hi MoreMsg	guifg=SeaGreen
 hi NonText	guifg=LightBlue guibg=grey30
