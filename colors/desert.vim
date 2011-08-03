@@ -47,8 +47,9 @@ hi StatusLine	guibg=#c2bfa5 guifg=black gui=none
 hi StatusLineNC	guibg=#c2bfa5 guifg=grey50 gui=none
 hi Title	guifg=indianred
 hi Visual	gui=none guifg=khaki guibg=olivedrab
-hi CursorLine guibg=grey30
-hi CursorColumn guibg=grey20
+hi CursorLine guibg=grey30  ctermbg=none
+hi CursorColumn guibg=grey20  ctermbg=none
+hi ColorColumn guibg=#AD7B7B
 "hi VisualNOS
 hi WarningMsg	guifg=salmon
 "hi WildMenu
