@@ -19,7 +19,6 @@ endif
 filetype plugin indent on
 filetype plugin on
 
-map <silent> § :WMToggle<CR><C-W>h
 au FileType cpp set cc=80
 au FileType php nnoremap <silent> <buffer> <cr> :PhpSearchContext<cr>
 au FileType php  let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
@@ -30,6 +29,15 @@ au FileType sass set tabstop=2
 source ~/.vim/plugin/php-doc.vim
 map <C-P> :call PhpDoc()<CR>
 
+fun! ToggleRelativeNumber()
+    if &number
+        set rnu
+    else
+        set nu
+    endif
+endfun
+
+map <silent> § :call ToggleRelativeNumber()<CR>
 map <D-M-Left> :tabp<CR>
 map <D-M-Right> :tabn<CR>
 
