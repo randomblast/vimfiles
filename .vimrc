@@ -19,6 +19,8 @@ endif
 filetype plugin indent on
 
 map <silent> § :WMToggle<CR><C-W>h
+au FileType cpp set cc=80
+au FileType php set cc=105
 au FileType haml set tabstop=2
 au FileType sass set tabstop=2
 
