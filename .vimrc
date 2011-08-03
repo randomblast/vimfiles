@@ -21,5 +21,9 @@ filetype plugin indent on
 map <silent> § :WMToggle<CR><C-W>h
 au FileType haml set tabstop=2
 au FileType sass set tabstop=2
+
+source ~/.vim/plugin/php-doc.vim
+map <C-P> :call PhpDoc()<CR>
+
 map <D-M-Left> :tabp<CR>
 map <D-M-Right> :tabn<CR>

@@ -77,15 +77,15 @@ let g:pdv_cfg_CommentSingle = "//"
 " Default values
 let g:pdv_cfg_Type = "mixed"
 let g:pdv_cfg_Package = ""
-let g:pdv_cfg_Version = "$id$"
-let g:pdv_cfg_Author = "Tobias Schlitt <toby@php.net>"
-let g:pdv_cfg_Copyright = "1997-2005 The PHP Group"
-let g:pdv_cfg_License = "PHP Version 3.0 {@link http://www.php.net/license/3_0.txt}"
+let g:pdv_cfg_Version = ""
+let g:pdv_cfg_Author = system('echo -n $(/usr/local/git/bin/git config --get user.name) "<"$(/usr/local/git/bin/git config --get user.email)">"')
+let g:pdv_cfg_Copyright = system('echo -n $(/usr/local/git/bin/git config --get user.copyright)')
+let g:pdv_cfg_License = ""
 
 let g:pdv_cfg_ReturnVal = "void"
 
 " Wether to create @uses tags for implementation of interfaces and inheritance
-let g:pdv_cfg_Uses = 1
+let g:pdv_cfg_Uses = 0
 
 " Options
 " :set paste before documenting (1|0)? Recommended.
@@ -402,6 +402,7 @@ func! PhpDocClass()
     exe l:txtBOL . g:pdv_cfg_CommentHead . g:pdv_cfg_EOL
 	exe l:txtBOL . g:pdv_cfg_Comment1 . l:classname . " " . g:pdv_cfg_EOL
     exe l:txtBOL . g:pdv_cfg_Commentn . g:pdv_cfg_EOL
+   	exe l:txtBOL . g:pdv_cfg_Commentn . "@class" . g:pdv_cfg_EOL
     if l:extends != "" && l:extends != "implements"
     	exe l:txtBOL . g:pdv_cfg_Commentn . "@uses " . l:extends . g:pdv_cfg_EOL
     endif
@@ -421,10 +422,10 @@ func! PhpDocClass()
         exe l:txtBOL . g:pdv_cfg_Commentn . "@final" . g:pdv_cfg_EOL
     endif
 	exe l:txtBOL . g:pdv_cfg_Commentn . "@package " . g:pdv_cfg_Package . g:pdv_cfg_EOL
-	exe l:txtBOL . g:pdv_cfg_Commentn . "@version " . g:pdv_cfg_Version . g:pdv_cfg_EOL
-	exe l:txtBOL . g:pdv_cfg_Commentn . "@copyright " . g:pdv_cfg_Copyright . g:pdv_cfg_EOL
+"	exe l:txtBOL . g:pdv_cfg_Commentn . "@version " . g:pdv_cfg_Version . g:pdv_cfg_EOL
 	exe l:txtBOL . g:pdv_cfg_Commentn . "@author " . g:pdv_cfg_Author g:pdv_cfg_EOL
-	exe l:txtBOL . g:pdv_cfg_Commentn . "@license " . g:pdv_cfg_License . g:pdv_cfg_EOL
+	exe l:txtBOL . g:pdv_cfg_Commentn . "@copyright " . g:pdv_cfg_Copyright . g:pdv_cfg_EOL
+"	exe l:txtBOL . g:pdv_cfg_Commentn . "@license " . g:pdv_cfg_License . g:pdv_cfg_EOL
 
 	" Close the comment block.
 	exe l:txtBOL . g:pdv_cfg_CommentTail . g:pdv_cfg_EOL
@@ -494,11 +495,11 @@ func! PhpDocDefault()
     " Local indent
     let l:txtBOL = g:pdv_cfg_BOL . indent
 
-    exe l:txtBOL . g:pdv_cfg_CommentHead . g:pdv_cfg_EOL
-    exe l:txtBOL . g:pdv_cfg_Commentn . " " . g:pdv_cfg_EOL
+    exe l:txtBOL . g:pdv_cfg_CommentSingle . " " . g:pdv_cfg_EOL
+"   exe l:txtBOL . g:pdv_cfg_Commentn . " " . g:pdv_cfg_EOL
 	
     " Close the comment block.
-	exe l:txtBOL . g:pdv_cfg_CommentTail . g:pdv_cfg_EOL
+    " exe l:txtBOL . g:pdv_cfg_CommentTail . g:pdv_cfg_EOL
 endfunc
 
 " }}}
