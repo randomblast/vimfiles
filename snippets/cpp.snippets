@@ -13,6 +13,23 @@ snippet map
 # std::vector
 snippet vector
 	std::vector<${1:char}> v${2};
+# File docblock
+snippet /**
+	/**
+	 * ${1:Short description}
+	 *
+	 * @file `expand('%')`
+	 * @package ${2}
+	 * @author `system('/usr/local/git/bin/git config --get user.name')` <`system('/usr/local/git/bin/git config --get user.email')`>
+	 */
+
+	 #ifndef ${3:__`toupper(substitute(expand('%'), '\.', '_', ''))`}
+	 #define $3
+
+	 $4
+
+	 #endif // $3
+
 # Namespace
 snippet ns
 	namespace ${1:`Filename('', 'my')`} {

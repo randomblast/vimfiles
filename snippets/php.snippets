@@ -1,7 +1,14 @@
 snippet php
 	<?php
+
+	/**
+	 * `expand('%:t')`
+	 *
+	 * @author `system('/usr/local/git/bin/git config --get user.name')` <`system('/usr/local/git/bin/git config --get user.email')`>
+	 * @copyright `system('/usr/local/git/bin/git config --get user.copyright')`
+	 */
+
 	${1}
-	?>
 snippet ec
 	echo "${1:string}"${2};
 snippet inc
@@ -210,6 +217,16 @@ snippet fun
 	${1:public }function ${2:FunctionName}(${3})
 	{
 		${4:// code...}
+	}
+snippet get
+	public function get${1:Property}()
+	{
+		return $this->${2:`LcFirst('$1')`};
+	}
+snippet set
+	public function set${1:Property}($${2:`LcFirst('$1')`})
+	{
+		$this->${3:$2} = $$2;
 	}
 # $... = array (...)
 snippet array

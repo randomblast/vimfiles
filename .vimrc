@@ -17,6 +17,7 @@ if has("gui_running")
 endif
 
 filetype plugin indent on
+filetype plugin on
 
 map <silent> § :WMToggle<CR><C-W>h
 au FileType cpp set cc=80
@@ -29,3 +30,11 @@ map <C-P> :call PhpDoc()<CR>
 
 map <D-M-Left> :tabp<CR>
 map <D-M-Right> :tabn<CR>
+
+fun! UcFirst(str)
+    return substitute(a:str, '\w', '\u\0', '')
+endfun
+
+fun! LcFirst(str)
+    return substitute(a:str, '\w', '\l\0', '')
+endfun
