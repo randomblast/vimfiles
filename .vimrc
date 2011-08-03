@@ -40,6 +40,8 @@ endfun
 map <silent> § :call ToggleRelativeNumber()<CR>
 map <D-M-Left> :tabp<CR>
 map <D-M-Right> :tabn<CR>
+map <silent> + <C-A>
+map <silent> - <C-X>
 
 fun! UcFirst(str)
     return substitute(a:str, '\w', '\u\0', '')
