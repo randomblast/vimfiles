@@ -23,12 +23,12 @@ snippet /**
 	 * @author `system('/usr/local/git/bin/git config --get user.name')` <`system('/usr/local/git/bin/git config --get user.email')`>
 	 */
 
-	 #ifndef ${3:__`toupper(substitute(expand('%'), '\.', '_', ''))`}
-	 #define $3
+	#ifndef ${3:__`toupper(substitute(substitute(expand('%'), '\/', '_', 'g'), '\.', '_', 'g'))`}
+	#define $3
 
-	 $4
+	$4
 
-	 #endif // $3
+	#endif // $3
 
 # Namespace
 snippet ns

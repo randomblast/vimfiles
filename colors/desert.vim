@@ -43,8 +43,8 @@ hi NonText	guifg=LightBlue guibg=grey30
 hi Question	guifg=springgreen
 hi Search	guibg=olivedrab guifg=wheat
 hi SpecialKey	guifg=yellowgreen
-hi StatusLine	guibg=#c2bfa5 guifg=black gui=none
-hi StatusLineNC	guibg=#c2bfa5 guifg=grey50 gui=none
+hi StatusLine	guibg=indianred guifg=white gui=none
+hi StatusLineNC	guibg=#e7e7e7 guifg=black gui=none
 hi Title	guifg=indianred
 hi Visual	gui=none guifg=khaki guibg=olivedrab
 hi CursorLine guibg=grey30  ctermbg=none

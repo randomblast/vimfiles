@@ -1,11 +1,11 @@
-color desert
+color nuvola
 syntax on
 set hlsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-set number
+set rnu
 set modeline
 set cursorline
 set cursorcolumn
@@ -14,15 +14,16 @@ if has("gui_running")
   set guioptions=egmc
   set fuoptions=maxvert,maxhorz
   set vb
+  set transparency=0
 endif
 
 filetype plugin indent on
 filetype plugin on
 
-au FileType cpp set cc=80
+au FileType cpp set cc=120
 au FileType php nnoremap <silent> <buffer> <cr> :PhpSearchContext<cr>
 au FileType php  let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-au FileType php set cc=105
+au FileType php set cc=120
 au FileType haml set tabstop=2
 au FileType sass set tabstop=2
 
@@ -38,8 +39,10 @@ fun! ToggleRelativeNumber()
 endfun
 
 map <silent> § :call ToggleRelativeNumber()<CR>
-map <D-M-Left> :tabp<CR>
-map <D-M-Right> :tabn<CR>
+map <silent> ± :NERDTreeToggle<CR>
+map <silent> ¡ :Buffers<CR>
+map <D-M-Left> :bprevious<CR>
+map <D-M-Right> :bnext<CR>
 map <silent> + <C-A>
 map <silent> - <C-X>
 

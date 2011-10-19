@@ -92,7 +92,7 @@ let g:pdv_cfg_Uses = 0
 let g:pdv_cfg_paste = 1
 
 " Wether for PHP5 code PHP4 tags should be set, like @access,... (1|0)?
-let g:pdv_cfg_php4always = 1
+let g:pdv_cfg_php4always = 0
  
 " Wether to guess scopes after PEAR coding standards:
 " $_foo/_bar() == <private|protected> (1|0)?
@@ -402,7 +402,7 @@ func! PhpDocClass()
     exe l:txtBOL . g:pdv_cfg_CommentHead . g:pdv_cfg_EOL
 	exe l:txtBOL . g:pdv_cfg_Comment1 . l:classname . " " . g:pdv_cfg_EOL
     exe l:txtBOL . g:pdv_cfg_Commentn . g:pdv_cfg_EOL
-   	exe l:txtBOL . g:pdv_cfg_Commentn . "@class" . g:pdv_cfg_EOL
+   	" exe l:txtBOL . g:pdv_cfg_Commentn . "@class" . g:pdv_cfg_EOL
     if l:extends != "" && l:extends != "implements"
     	exe l:txtBOL . g:pdv_cfg_Commentn . "@uses " . l:extends . g:pdv_cfg_EOL
     endif
@@ -421,9 +421,9 @@ func! PhpDocClass()
 	if l:final != ""
         exe l:txtBOL . g:pdv_cfg_Commentn . "@final" . g:pdv_cfg_EOL
     endif
-	exe l:txtBOL . g:pdv_cfg_Commentn . "@package " . g:pdv_cfg_Package . g:pdv_cfg_EOL
+	" exe l:txtBOL . g:pdv_cfg_Commentn . "@package " . g:pdv_cfg_Package . g:pdv_cfg_EOL
 "	exe l:txtBOL . g:pdv_cfg_Commentn . "@version " . g:pdv_cfg_Version . g:pdv_cfg_EOL
-	exe l:txtBOL . g:pdv_cfg_Commentn . "@author " . g:pdv_cfg_Author g:pdv_cfg_EOL
+	exe l:txtBOL . g:pdv_cfg_Commentn . "@author " . system('echo -n $(/usr/local/git/bin/git config --get user.name) "<"$(/usr/local/git/bin/git config --get user.email)">"') . g:pdv_cfg_EOL
 	exe l:txtBOL . g:pdv_cfg_Commentn . "@copyright " . g:pdv_cfg_Copyright . g:pdv_cfg_EOL
 "	exe l:txtBOL . g:pdv_cfg_Commentn . "@license " . g:pdv_cfg_License . g:pdv_cfg_EOL
 
