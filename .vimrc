@@ -1,4 +1,4 @@
-colorscheme evening
+colorscheme desert
 
 set nocompatible
 filetype off
