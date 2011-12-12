@@ -1,4 +1,21 @@
 colorscheme desert
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'scrooloose/nerdtree'
+Bundle 'projtags.vim'
+Bundle 'phpfolding.vim'
+Bundle 'php.vim--Garvin'
+Bundle 'phpErrorMarker'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
+Bundle 'SuperTab-continued'
+Bundle 'phpcomplete.vim'
+Bundle 'msanders/snipmate.vim'
 
 set nocompatible
 filetype off
@@ -66,20 +83,3 @@ if has("statusline")
  set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'project.tar.gz'
-Bundle 'projtags.vim'
-Bundle 'phpfolding.vim'
-Bundle 'php.vim--Garvin'
-Bundle 'snipmate'
-Bundle 'phpErrorMarker'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-commentary'
-Bundle 'SuperTab-continued'
-Bundle 'phpcomplete.vim'
