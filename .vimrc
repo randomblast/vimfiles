@@ -1,4 +1,3 @@
-colorscheme desert
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -16,6 +15,9 @@ Bundle 'tpope/vim-commentary'
 Bundle 'SuperTab-continued'
 Bundle 'phpcomplete.vim'
 Bundle 'msanders/snipmate.vim'
+Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
+
+colorscheme Tomorrow-Night
 
 set nocompatible
 filetype off
