@@ -15,13 +15,11 @@ Bundle 'tpope/vim-commentary'
 Bundle 'SuperTab-continued'
 Bundle 'phpcomplete.vim'
 Bundle 'msanders/snipmate.vim'
-Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
-Bundle 'scrooloose/syntastic'
 Bundle 'tcalc'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kchmck/vim-coffee-script'
 
-colorscheme solarized
+colorscheme default
 
 set nocompatible
 filetype off
@@ -100,7 +98,7 @@ map <silent> - <C-X>
 map <silent> <D-[> <C-T>
 map <silent> <D-]> <C-]>
 
-let g:ProjTags = [ "/Library/WebServer/Documents/*/site" ]
+let g:ProjTags = [ "/Users/josh/Code/*" ]
 
 if has("statusline")
  set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
